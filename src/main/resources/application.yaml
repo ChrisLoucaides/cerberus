@@ -1,0 +1,16 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    root: DEBUG
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: login_route
+          uri: http://localhost:8080
+          predicates:
+            - Path=/userlogin/**
+server:
+  port : 8081
